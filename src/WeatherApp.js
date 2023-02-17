@@ -46,7 +46,11 @@ export default function WeatherApp() {
           open-sourced on GitHub{" "}
         </a>
         and{" "}
-        <a href="#" target="_blank">
+        <a
+          href="#https://app.netlify.com/sites/sensational-banoffee-18e086/overview"
+          target="_blank"
+          rel="noreferrer"
+        >
           hosted on Netlify
         </a>
       </p>
