@@ -4,7 +4,6 @@ import axios from "axios";
 
 export default function WeatherToday() {
   const [city, setCity] = useState("");
-  const [search, setSearch] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [weather, setWeather] = useState("");
   const [loaded, setLoaded] = useState(false);
@@ -26,8 +25,8 @@ export default function WeatherToday() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setSearch(city.trim());
-    if (search.length > 0) {
+
+    if (city.length > 0) {
       let apiKey = "7ed26a6948c661d05fafe7355b41b2ec";
       let metricUnit = "units=metric";
       let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&${metricUnit}`;
@@ -60,7 +59,7 @@ export default function WeatherToday() {
           </div>
           <div className="col-sm-2 searchIcon">
             <button className="searchButton btn" type="submit">
-              <i className="fa-solid fa-magnifying-glass"></i>
+              <i className="fa-solid fa-circle-right"></i>
             </button>
           </div>
         </div>
@@ -68,8 +67,7 @@ export default function WeatherToday() {
 
       <form id="current-location-search">
         <button className="currentLocationButton btn" type="button">
-          <i className="fa-solid fa-map-location-dot"></i>{" "}
-          <small className="currentLocation">current location</small>
+          <i className="fa-solid fa-location-arrow"></i>{" "}
         </button>
       </form>
     </div>

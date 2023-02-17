@@ -13,7 +13,14 @@ export default function WeatherApp() {
           </button>
         </div>
         <div className="col logoCol">
-          <img src={logo} className="App-logo" alt="logo" />
+          <a
+            href="https://reactjs.org/"
+            target="_blank"
+            title="React"
+            rel="noreferrer"
+          >
+            <img src={logo} className="App-logo" alt="logo" />
+          </a>
         </div>
       </div>
       <div className="row">
