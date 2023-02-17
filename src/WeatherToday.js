@@ -38,6 +38,23 @@ export default function WeatherToday() {
     setCity(event.target.value);
   }
 
+  function showWeatherOfUserCurrentLocation(response) {
+    console.log(response.data);
+  }
+
+  function showCurrentLocation(position) {
+    let apiKey = "7ed26a6948c661d05fafe7355b41b2ec";
+    let metricUnit = "units=metric";
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    let userCityApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&${metricUnit}&appid=${apiKey}`;
+    axios.get(userCityApiUrl).then(showWeatherOfUserCurrentLocation);
+  }
+
+  function handleClick(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(showCurrentLocation);
+  }
   let form = (
     <div className="SearchForm">
       <form
@@ -66,7 +83,11 @@ export default function WeatherToday() {
       </form>
 
       <form id="current-location-search">
-        <button className="currentLocationButton btn" type="button">
+        <button
+          onClick={handleClick}
+          className="currentLocationButton btn"
+          type="button"
+        >
           <i className="fa-solid fa-location-arrow"></i>{" "}
         </button>
       </form>
