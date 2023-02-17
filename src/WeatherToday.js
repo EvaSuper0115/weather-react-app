@@ -102,6 +102,14 @@ export default function WeatherToday() {
             {displayName}
           </h1>
         </div>
+        <div className="DegreeIcon">
+          <img
+            id="weatherNowIcon"
+            className="degreeNowIcon"
+            src={weather.icon}
+            alt={weather.icon}
+          />
+        </div>
         <div className="DegreeNow">
           <div id="degree-number" className="degreeNow">
             {Math.round(weather.temperature)}
@@ -113,21 +121,16 @@ export default function WeatherToday() {
             |<span id="fahrenheit">°F </span>
           </div>
         </div>
-        <div className="DegreeIcon">
-          <img
-            id="weatherNowIcon"
-            className="degreeNowIcon"
-            src={weather.icon}
-            alt={weather.icon}
-          />
-        </div>
+
         <div className="WeatherDetails">
           <div className="row weatherDetailsWholeRow">
             <div className="col-sm-6 weatherDetailsColum">
               <div className="weatherDetails">
                 <p id="weatherDetail-1">{weather.description}</p>
-                <p id="weatherDetail-2">Humidity :{weather.humidity} %</p>
-                <p id="weatherDetail-3">Wind :{Math.round(weather.wind)}mps</p>
+                <p id="weatherDetail-2">Humidity : {weather.humidity} %</p>
+                <p id="weatherDetail-3">
+                  Wind : {Math.round(weather.wind)} mps
+                </p>
               </div>
             </div>
             <div className="col-sm-6 degreeDetailsColum">
@@ -136,7 +139,7 @@ export default function WeatherToday() {
                   Lowest : {Math.round(weather.lowest)}°{" "}
                 </p>
                 <p id="highest-degree">
-                  Highest:{Math.round(weather.highest)}°
+                  Highest: {Math.round(weather.highest)}°
                 </p>
                 <p id="feels-like-degree">
                   Feels like: {Math.round(weather.feelsLike)}°
@@ -148,7 +151,7 @@ export default function WeatherToday() {
         <div className="LastUpdated">
           <div id="last-updated-title">last updated</div>
           <div id="date">Sat 25 Feb 2023</div>
-          <div id="last-updated-time">14:23</div>
+          <div id="last-updated-time">13:35</div>
         </div>
       </div>
     );
@@ -156,6 +159,10 @@ export default function WeatherToday() {
     return (
       <div className="WeatherToday pagePaddingWeatherToday shadow">
         {form}
+
+        <div className="CityName">
+          <h1 className="cityName">London</h1>
+        </div>
         <div className="loader">
           <ThreeDots
             height="80"
@@ -167,6 +174,39 @@ export default function WeatherToday() {
             wrapperClassName=""
             visible={true}
           />
+        </div>
+        <div className="DegreeNow">
+          <div className="degreeNow">10</div>
+          <div className="degreeSign">
+            <span id="celsius" className="active">
+              °C{" "}
+            </span>
+            |<span id="fahrenheit">°F </span>
+          </div>
+        </div>
+
+        <div className="WeatherDetails">
+          <div className="row weatherDetailsWholeRow">
+            <div className="col-sm-6 weatherDetailsColum">
+              <div className="weatherDetails">
+                <p id="weatherDetail-1"> Sunny </p>
+                <p id="weatherDetail-2">Humidity : 30 %</p>
+                <p id="weatherDetail-3">Wind : 4 mps</p>
+              </div>
+            </div>
+            <div className="col-sm-6 degreeDetailsColum">
+              <div className="degreeDetails">
+                <p id="lowest-degree">Lowest : 3° </p>
+                <p id="highest-degree">Highest : 7°</p>
+                <p id="feels-like-degree">Feels like : 5°</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="LastUpdated">
+          <div id="last-updated-title">last updated</div>
+          <div id="date">Sat 25 Feb 2023</div>
+          <div id="last-updated-time">14:23</div>
         </div>
       </div>
     );
