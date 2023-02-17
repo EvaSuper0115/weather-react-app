@@ -1,8 +1,12 @@
 .App-logo {
   height: 5vmin;
   pointer-events: none;
+  margin-top: 15px;
 }
-
+.logoCol {
+  display: flex;
+  justify-content: flex-end;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

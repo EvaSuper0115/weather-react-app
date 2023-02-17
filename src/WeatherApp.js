@@ -1,15 +1,31 @@
 import React from "react";
-
+import logo from "./logo.svg";
+import WeatherToday from "./WeatherToday.js";
+import HourlyForecast from "./HourlyForecast.js";
+import WeeklyForecast from "./WeeklyForecast.js";
 export default function WeatherApp() {
   return (
     <div className="WeatherApp">
-      <button id="switch-mode-button">
-        <i className="fa-solid fa-toggle-on"></i>{" "}
-      </button>
       <div className="row">
-        <div className="col-lg-6"></div>
+        <div className="col">
+          <button id="switch-mode-button">
+            <i className="fa-solid fa-toggle-on"></i>{" "}
+          </button>
+        </div>
+        <div className="col logoCol">
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
+      </div>
+      <div className="row">
         <div className="col-lg-6">
-          <div className="pagePaddingWeatherNextFiveDays"></div>
+          {" "}
+          <WeatherToday />
+          <HourlyForecast />
+        </div>
+        <div className="col-lg-6">
+          <div className="pagePaddingWeatherNextFiveDays">
+            <WeeklyForecast />
+          </div>
         </div>
       </div>
       <p id="footer">
