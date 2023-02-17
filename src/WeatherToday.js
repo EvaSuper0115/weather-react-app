@@ -108,7 +108,7 @@ export default function WeatherToday() {
               <div className="weatherDetails">
                 <p id="weatherDetail-1">{weather.description}</p>
                 <p id="weatherDetail-2">Humidity :{weather.humidity} %</p>
-                <p id="weatherDetail-3">Wind :{weather.wind}mps</p>
+                <p id="weatherDetail-3">Wind :{Math.round(weather.wind)}mps</p>
               </div>
             </div>
             <div className="col-sm-6 degreeDetailsColum">
