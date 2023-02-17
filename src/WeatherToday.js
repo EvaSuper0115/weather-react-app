@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ThreeDots } from "react-loader-spinner";
 import axios from "axios";
 
 export default function WeatherToday() {
@@ -134,7 +135,21 @@ export default function WeatherToday() {
     );
   } else {
     return (
-      <div className="WeatherToday pagePaddingWeatherToday shadow">{form}</div>
+      <div className="WeatherToday pagePaddingWeatherToday shadow">
+        {form}
+        <div className="loader">
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="rgb(224,235,231)"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+          />
+        </div>
+      </div>
     );
   }
 }

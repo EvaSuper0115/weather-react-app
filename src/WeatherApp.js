@@ -38,7 +38,11 @@ export default function WeatherApp() {
           On Tai To
         </a>{" "}
         and is{" "}
-        <a href="#" target="_blank">
+        <a
+          href="https://github.com/EvaSuper0115/weather-react-app"
+          target="_blank"
+          rel="noreferrer"
+        >
           open-sourced on GitHub{" "}
         </a>
         and{" "}
