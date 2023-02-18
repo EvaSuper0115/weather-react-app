@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FirstLoadApp from "./FirstLoadApp";
+
 import SubmittedCity from "./SubmittedCity";
 import ClickedCurrentLocation from "./ClickedCurrentLocation";
 import axios from "axios";
@@ -131,14 +131,6 @@ export default function WeatherToday() {
       </div>
     );
   } else {
-    return (
-      <div className="col-lg-6">
-        <div className="WeatherToday pagePaddingWeatherToday shadow">
-          {form}
-          <FirstLoadApp />
-        </div>
-        <HourlyForecast />
-      </div>
-    );
+    navigator.geolocation.getCurrentPosition(showCurrentLocation);
   }
 }
