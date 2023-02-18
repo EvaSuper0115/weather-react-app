@@ -47,7 +47,6 @@ export default function WeatherToday() {
   function showWeatherOfUserCurrentLocation(response) {
     setClicked(true);
     setSubmitted(false);
-
     setUserWeather({
       name: response.data.name,
       temperature: response.data.main.temp,
