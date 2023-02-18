@@ -81,10 +81,8 @@ body {
   justify-content: center;
   max-width: 100%;
 }
-#user-inputed-city {
-  text-transform: capitalize;
-}
-#current-location-search {
+
+.current-location-search {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -118,6 +116,7 @@ body {
   font-weight: 500;
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
 }
 
 .degreeNow {
@@ -133,15 +132,15 @@ body {
   margin-bottom: -3px;
 }
 
-#celsius,
-#fahrenheit {
+.celsius,
+.fahrenheit {
   transition: all 150ms ease-in-out;
   padding: 1px 5px;
   border-radius: 5px;
 }
 
-#celsius:hover,
-#fahrenheit:hover {
+.celsius:hover,
+.fahrenheit:hover {
   cursor: pointer;
   background: #dddddf;
   box-shadow: 0px 30px 50px rgb(57 48 90 / 10%);
@@ -186,7 +185,7 @@ body {
   font-family: "Cutive Mono", monospace;
   font-size: 25px;
 }
-#hourlyForecastRow {
+.hourlyForecastRow {
   display: flex;
   justify-content: center;
 }
@@ -196,7 +195,7 @@ body {
   display: block;
   margin: 0 auto;
 }
-#hours {
+.hours {
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -219,21 +218,21 @@ body {
   margin-bottom: 0;
   width: 400px;
 }
-#date,
-#last-updated-time,
-#last-updated-title {
+.date,
+.last-updated-time,
+.last-updated-title {
   text-align: center;
   color: #79797d;
 }
-#last-updated-title {
+.last-updated-title {
   margin-top: 22px;
   padding: 0;
   font-size: 11px;
 }
-#date {
+.date {
   margin-top: 2px;
 }
-#last-updated-time {
+.last-updated-time {
   margin-bottom: -13px;
 }
 .forecastPageTitle {
@@ -259,7 +258,7 @@ body {
   background: rgba(94, 94, 126, 0.2);
 }
 
-#forecastDate {
+.forecastDate {
   font-size: 13px;
   margin-top: 11px;
   color: #79797d;
@@ -283,7 +282,7 @@ body {
   width: 62px;
 }
 
-#forecastMinCelsius {
+.forecastMinCelsius {
   font-size: 25px;
   display: inline;
   opacity: 0.7;
@@ -291,7 +290,7 @@ body {
   position: relative;
   bottom: -17px;
 }
-#forecastMaxCelsius {
+.forecastMaxCelsius {
   font-size: 25px;
   display: inline;
   margin-left: 10px;
@@ -324,9 +323,9 @@ body {
 .dark .search-bar {
   box-shadow: 2px 3px 44px rgba(250, 250, 250, 0.3);
 }
-.dark #last-updated-title,
-.dark #last-updated-time,
-.dark #date {
+.dark .last-updated-title,
+.dark .last-updated-time,
+.dark .date {
   color: #dddddf;
 }
 
@@ -351,15 +350,15 @@ body {
   box-shadow: 0px 30px 50px rgba(250, 250, 250, 0.3);
 }
 
-.dark #celsius:hover,
-.dark #fahrenheit:hover {
+.dark .celsius:hover,
+.dark .fahrenheit:hover {
   background: rgba(200, 201, 204, 0.4);
 }
 .dark .forecastWholeRow:hover {
   background: rgba(164, 182, 254, 0.2);
 }
-.dark #forecastMinCelsius,
-.dark #forecastMaxCelsius {
+.dark .forecastMinCelsius,
+.dark .forecastMaxCelsius {
   color: #dddddf;
 }
 .dark .hourCol:hover {

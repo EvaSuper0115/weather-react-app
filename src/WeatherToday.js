@@ -59,7 +59,6 @@ export default function WeatherToday() {
     <div className="SearchForm">
       <form
         onSubmit={handleSubmit}
-        id="city-search"
         className="weather-search-form"
         autoComplete="off"
       >
@@ -67,7 +66,6 @@ export default function WeatherToday() {
           <div className="col-sm-10">
             <input
               onChange={handleChange}
-              id="inputed-city"
               type="search"
               className="search-bar form-control"
               placeholder="search city"
@@ -82,7 +80,7 @@ export default function WeatherToday() {
         </div>
       </form>
 
-      <form id="current-location-search">
+      <form className="current-location-search">
         <button
           onClick={handleClick}
           className="currentLocationButton btn"
@@ -98,27 +96,20 @@ export default function WeatherToday() {
       <div className="WeatherToday pagePaddingWeatherToday shadow">
         {form}
         <div className="CityName">
-          <h1 id="user-inputed-city" className="cityName">
-            {displayName}
-          </h1>
+          <h1 className="cityName">{displayName}</h1>
         </div>
         <div className="DegreeIcon">
           <img
-            id="weatherNowIcon"
             className="degreeNowIcon"
             src={weather.icon}
             alt={weather.icon}
           />
         </div>
         <div className="DegreeNow">
-          <div id="degree-number" className="degreeNow">
-            {Math.round(weather.temperature)}
-          </div>
+          <div className="degreeNow">{Math.round(weather.temperature)}</div>
           <div className="degreeSign">
-            <span id="celsius" className="active">
-              °C{" "}
-            </span>
-            |<span id="fahrenheit">°F </span>
+            <span className="celsius active">°C </span>|
+            <span className="fahrenheit">°F </span>
           </div>
         </div>
 
@@ -126,32 +117,24 @@ export default function WeatherToday() {
           <div className="row weatherDetailsWholeRow">
             <div className="col-sm-6 weatherDetailsColum">
               <div className="weatherDetails">
-                <p id="weatherDetail-1">{weather.description}</p>
-                <p id="weatherDetail-2">Humidity : {weather.humidity} %</p>
-                <p id="weatherDetail-3">
-                  Wind : {Math.round(weather.wind)} mps
-                </p>
+                <p>{weather.description}</p>
+                <p>Humidity : {weather.humidity} %</p>
+                <p>Wind : {Math.round(weather.wind)} mps</p>
               </div>
             </div>
             <div className="col-sm-6 degreeDetailsColum">
               <div className="degreeDetails">
-                <p id="lowest-degree">
-                  Lowest : {Math.round(weather.lowest)}°{" "}
-                </p>
-                <p id="highest-degree">
-                  Highest: {Math.round(weather.highest)}°
-                </p>
-                <p id="feels-like-degree">
-                  Feels like: {Math.round(weather.feelsLike)}°
-                </p>
+                <p>Lowest : {Math.round(weather.lowest)}° </p>
+                <p>Highest: {Math.round(weather.highest)}°</p>
+                <p>Feels like: {Math.round(weather.feelsLike)}°</p>
               </div>
             </div>
           </div>
         </div>
         <div className="LastUpdated">
-          <div id="last-updated-title">last updated</div>
-          <div id="date">Sat 25 Feb 2023</div>
-          <div id="last-updated-time">13:35</div>
+          <div className="last-updated-title">last updated</div>
+          <div className="date">Sat 25 Feb 2023</div>
+          <div className="last-updated-time">13:35</div>
         </div>
       </div>
     );
@@ -178,10 +161,7 @@ export default function WeatherToday() {
         <div className="DegreeNow">
           <div className="degreeNow">10</div>
           <div className="degreeSign">
-            <span id="celsius" className="active">
-              °C{" "}
-            </span>
-            |<span id="fahrenheit">°F </span>
+            <span className="active">°C </span>|<span>°F </span>
           </div>
         </div>
 
@@ -189,24 +169,24 @@ export default function WeatherToday() {
           <div className="row weatherDetailsWholeRow">
             <div className="col-sm-6 weatherDetailsColum">
               <div className="weatherDetails">
-                <p id="weatherDetail-1"> Sunny </p>
-                <p id="weatherDetail-2">Humidity : 30 %</p>
-                <p id="weatherDetail-3">Wind : 4 mps</p>
+                <p> Sunny </p>
+                <p>Humidity : 30 %</p>
+                <p>Wind : 4 mps</p>
               </div>
             </div>
             <div className="col-sm-6 degreeDetailsColum">
               <div className="degreeDetails">
-                <p id="lowest-degree">Lowest : 3° </p>
-                <p id="highest-degree">Highest : 7°</p>
-                <p id="feels-like-degree">Feels like : 5°</p>
+                <p>Lowest : 3° </p>
+                <p>Highest : 7°</p>
+                <p>Feels like : 5°</p>
               </div>
             </div>
           </div>
         </div>
         <div className="LastUpdated">
-          <div id="last-updated-title">last updated</div>
-          <div id="date">Sat 25 Feb 2023</div>
-          <div id="last-updated-time">14:23</div>
+          <div className="last-updated-title">last updated</div>
+          <div className="date">Sat 25 Feb 2023</div>
+          <div className="last-updated-time">14:23</div>
         </div>
       </div>
     );

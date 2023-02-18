@@ -8,7 +8,7 @@ export default function WeeklyForecast() {
         <i className="fa-solid fa-arrow-trend-up"></i>WEEKLY FORECAST
       </p>
 
-      <div id="forecast-for-each-day">
+      <div>
         <DailyForecast />
         <DailyForecast />
         <DailyForecast />
