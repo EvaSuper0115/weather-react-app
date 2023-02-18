@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import WeatherToday from "./WeatherToday.js";
-import HourlyForecast from "./HourlyForecast.js";
+
 import WeeklyForecast from "./WeeklyForecast.js";
 
 export default function WeatherApp() {
@@ -25,11 +25,8 @@ export default function WeatherApp() {
         </div>
       </div>
       <div className="row">
-        <div className="col-lg-6">
-          {" "}
-          <WeatherToday />
-          <HourlyForecast />
-        </div>
+        {" "}
+        <WeatherToday />
         <div className="col-lg-6">
           <div className="pagePaddingWeatherNextFiveDays">
             <WeeklyForecast />

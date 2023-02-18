@@ -3,7 +3,7 @@ import FirstLoadApp from "./FirstLoadApp";
 import SubmittedCity from "./SubmittedCity";
 import ClickedCurrentLocation from "./ClickedCurrentLocation";
 import axios from "axios";
-
+import HourlyForecast from "./HourlyForecast.js";
 export default function WeatherToday() {
   const [city, setCity] = useState("");
   const [displayName, setDisplayName] = useState("");
@@ -113,23 +113,32 @@ export default function WeatherToday() {
   );
   if (submitted) {
     return (
-      <div className="WeatherToday pagePaddingWeatherToday shadow">
-        {form}
-        <SubmittedCity city={displayName} weather={weather} />
+      <div className="col-lg-6">
+        <div className="WeatherToday pagePaddingWeatherToday shadow">
+          {form}
+          <SubmittedCity city={displayName} weather={weather} />
+        </div>
+        <HourlyForecast />
       </div>
     );
   } else if (clicked) {
     return (
-      <div className="WeatherToday pagePaddingWeatherToday shadow">
-        {form}
-        <ClickedCurrentLocation userWeather={userWeather} />
+      <div className="col-lg-6">
+        <div className="WeatherToday pagePaddingWeatherToday shadow">
+          {form}
+          <ClickedCurrentLocation userWeather={userWeather} />
+        </div>
+        <HourlyForecast />
       </div>
     );
   } else {
     return (
-      <div className="WeatherToday pagePaddingWeatherToday shadow">
-        {form}
-        <FirstLoadApp />
+      <div className="col-lg-6">
+        <div className="WeatherToday pagePaddingWeatherToday shadow">
+          {form}
+          <FirstLoadApp />
+        </div>
+        <HourlyForecast />
       </div>
     );
   }
