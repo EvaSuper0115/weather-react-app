@@ -6,9 +6,13 @@ export default function WeatherToday() {
   const [city, setCity] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [weather, setWeather] = useState("");
+  const [loaded, setLoaded] = useState(true);
   const [submitted, setSubmitted] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  const [userWeather, setUserWeather] = useState("");
 
   function showWeather(response) {
+    setLoaded(false);
     setSubmitted(true);
     setDisplayName(response.data.name);
     setWeather({
@@ -40,7 +44,21 @@ export default function WeatherToday() {
   }
 
   function showWeatherOfUserCurrentLocation(response) {
-    console.log(response.data);
+    setClicked(true);
+    setSubmitted(false);
+    setLoaded(false);
+    setUserWeather({
+      name: response.data.name,
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      lowest: response.data.main.temp_min,
+      highest: response.data.main.temp_max,
+      feelsLike: response.data.main.feels_like,
+      date: new Date(response.data.dt * 1000),
+    });
   }
 
   function showCurrentLocation(position) {
@@ -141,7 +159,7 @@ export default function WeatherToday() {
         </div>
       </div>
     );
-  } else {
+  } else if (loaded) {
     return (
       <div className="WeatherToday pagePaddingWeatherToday shadow">
         {form}
@@ -190,6 +208,55 @@ export default function WeatherToday() {
           <div className="last-updated-title">last updated</div>
           <div className="date">Sat 25 Feb 2023</div>
           <div className="last-updated-time">14:23</div>
+        </div>
+      </div>
+    );
+  } else if (clicked) {
+    return (
+      <div className="WeatherToday pagePaddingWeatherToday shadow">
+        {form}
+        <div className="CityName">
+          <h1 className="cityName">{userWeather.name}</h1>
+        </div>
+        <div className="DegreeIcon">
+          <img
+            className="degreeNowIcon"
+            src={userWeather.icon}
+            alt={userWeather.icon}
+          />
+        </div>
+        <div className="DegreeNow">
+          <div className="degreeNow">{Math.round(userWeather.temperature)}</div>
+          <div className="degreeSign">
+            <span className="celsius active">°C </span>|
+            <span className="fahrenheit">°F </span>
+          </div>
+        </div>
+
+        <div className="WeatherDetails">
+          <div className="row weatherDetailsWholeRow">
+            <div className="col-sm-6 weatherDetailsColum">
+              <div className="weatherDetails">
+                <p>{userWeather.description}</p>
+                <p>Humidity : {userWeather.humidity} %</p>
+                <p>Wind : {Math.round(userWeather.wind)} mps</p>
+              </div>
+            </div>
+            <div className="col-sm-6 degreeDetailsColum">
+              <div className="degreeDetails">
+                <p>Lowest : {Math.round(userWeather.lowest)}° </p>
+                <p>Highest: {Math.round(userWeather.highest)}°</p>
+                <p>Feels like: {Math.round(userWeather.feelsLike)}°</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="LastUpdated">
+          <div className="last-updated-title">last updated</div>
+          <div className="date">{userWeather.date.toDateString()}</div>
+          <div className="last-updated-time">
+            {userWeather.date.toLocaleTimeString("it-IT")}
+          </div>
         </div>
       </div>
     );
