@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FirstLoadApp from "./FirstLoadApp";
 import SubmittedCity from "./SubmittedCity";
+import ClickedCurrentLocation from "./ClickedCurrentLocation";
 import axios from "axios";
 
 export default function WeatherToday() {
@@ -129,49 +130,7 @@ export default function WeatherToday() {
     return (
       <div className="WeatherToday pagePaddingWeatherToday shadow">
         {form}
-        <div className="CityName">
-          <h1 className="cityName">{userWeather.name}</h1>
-        </div>
-        <div className="DegreeIcon">
-          <img
-            className="degreeNowIcon"
-            src={userWeather.icon}
-            alt={userWeather.icon}
-          />
-        </div>
-        <div className="DegreeNow">
-          <div className="degreeNow">{Math.round(userWeather.temperature)}</div>
-          <div className="degreeSign">
-            <span className="celsius active">°C </span>|
-            <span className="fahrenheit">°F </span>
-          </div>
-        </div>
-
-        <div className="WeatherDetails">
-          <div className="row weatherDetailsWholeRow">
-            <div className="col-sm-6 weatherDetailsColum">
-              <div className="weatherDetails">
-                <p>{userWeather.description}</p>
-                <p>Humidity : {userWeather.humidity} %</p>
-                <p>Wind : {Math.round(userWeather.wind)} mps</p>
-              </div>
-            </div>
-            <div className="col-sm-6 degreeDetailsColum">
-              <div className="degreeDetails">
-                <p>Lowest : {Math.round(userWeather.lowest)}° </p>
-                <p>Highest: {Math.round(userWeather.highest)}°</p>
-                <p>Feels like: {Math.round(userWeather.feelsLike)}°</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="LastUpdated">
-          <div className="last-updated-title">last updated</div>
-          <div className="date">{userWeather.date.toDateString()}</div>
-          <div className="last-updated-time">
-            {userWeather.date.toLocaleTimeString("it-IT")}
-          </div>
-        </div>
+        <ClickedCurrentLocation userWeather={userWeather} />
       </div>
     );
   }
