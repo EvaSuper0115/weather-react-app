@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FirstLoadApp from "./FirstLoadApp";
+import SubmittedCity from "./SubmittedCity";
 import axios from "axios";
 
 export default function WeatherToday() {
@@ -121,49 +122,7 @@ export default function WeatherToday() {
     return (
       <div className="WeatherToday pagePaddingWeatherToday shadow">
         {form}
-        <div className="CityName">
-          <h1 className="cityName">{displayName}</h1>
-        </div>
-        <div className="DegreeIcon">
-          <img
-            className="degreeNowIcon"
-            src={weather.icon}
-            alt={weather.icon}
-          />
-        </div>
-        <div className="DegreeNow">
-          <div className="degreeNow">{Math.round(weather.temperature)}</div>
-          <div className="degreeSign">
-            <span className="celsius active">°C </span>|
-            <span className="fahrenheit">°F </span>
-          </div>
-        </div>
-
-        <div className="WeatherDetails">
-          <div className="row weatherDetailsWholeRow">
-            <div className="col-sm-6 weatherDetailsColum">
-              <div className="weatherDetails">
-                <p>{weather.description}</p>
-                <p>Humidity : {weather.humidity} %</p>
-                <p>Wind : {Math.round(weather.wind)} mps</p>
-              </div>
-            </div>
-            <div className="col-sm-6 degreeDetailsColum">
-              <div className="degreeDetails">
-                <p>Lowest : {Math.round(weather.lowest)}° </p>
-                <p>Highest: {Math.round(weather.highest)}°</p>
-                <p>Feels like: {Math.round(weather.feelsLike)}°</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="LastUpdated">
-          <div className="last-updated-title">last updated</div>
-          <div className="date">{weather.date.toDateString()}</div>
-          <div className="last-updated-time">
-            {weather.date.toLocaleTimeString("it-IT")}
-          </div>
-        </div>
+        <SubmittedCity city={displayName} weather={weather} />
       </div>
     );
   } else if (clicked) {
