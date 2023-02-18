@@ -6,10 +6,10 @@ export default function WeatherToday() {
   const [city, setCity] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [weather, setWeather] = useState("");
-  const [loaded, setLoaded] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   function showWeather(response) {
-    setLoaded(true);
+    setSubmitted(true);
     setDisplayName(response.data.name);
     setWeather({
       temperature: response.data.main.temp,
@@ -20,6 +20,7 @@ export default function WeatherToday() {
       lowest: response.data.main.temp_min,
       highest: response.data.main.temp_max,
       feelsLike: response.data.main.feels_like,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -91,7 +92,7 @@ export default function WeatherToday() {
       </form>
     </div>
   );
-  if (loaded) {
+  if (submitted) {
     return (
       <div className="WeatherToday pagePaddingWeatherToday shadow">
         {form}
@@ -133,8 +134,10 @@ export default function WeatherToday() {
         </div>
         <div className="LastUpdated">
           <div className="last-updated-title">last updated</div>
-          <div className="date">Sat 25 Feb 2023</div>
-          <div className="last-updated-time">13:35</div>
+          <div className="date">{weather.date.toDateString()}</div>
+          <div className="last-updated-time">
+            {weather.date.toLocaleTimeString("it-IT")}
+          </div>
         </div>
       </div>
     );
