@@ -8,13 +8,12 @@ export default function WeatherToday() {
   const [city, setCity] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [weather, setWeather] = useState("");
-  const [loaded, setLoaded] = useState(true);
+
   const [submitted, setSubmitted] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [userWeather, setUserWeather] = useState("");
 
   function showWeather(response) {
-    setLoaded(false);
     setSubmitted(true);
     setDisplayName(response.data.name);
     setWeather({
@@ -48,7 +47,7 @@ export default function WeatherToday() {
   function showWeatherOfUserCurrentLocation(response) {
     setClicked(true);
     setSubmitted(false);
-    setLoaded(false);
+
     setUserWeather({
       name: response.data.name,
       temperature: response.data.main.temp,
@@ -112,14 +111,7 @@ export default function WeatherToday() {
       </form>
     </div>
   );
-  if (loaded) {
-    return (
-      <div className="WeatherToday pagePaddingWeatherToday shadow">
-        {form}
-        <FirstLoadApp />
-      </div>
-    );
-  } else if (submitted) {
+  if (submitted) {
     return (
       <div className="WeatherToday pagePaddingWeatherToday shadow">
         {form}
@@ -131,6 +123,13 @@ export default function WeatherToday() {
       <div className="WeatherToday pagePaddingWeatherToday shadow">
         {form}
         <ClickedCurrentLocation userWeather={userWeather} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="WeatherToday pagePaddingWeatherToday shadow">
+        {form}
+        <FirstLoadApp />
       </div>
     );
   }
