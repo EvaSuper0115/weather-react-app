@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import WeatherToday from "./WeatherToday.js";
 import HourlyForecast from "./HourlyForecast.js";
 import WeeklyForecast from "./WeeklyForecast.js";
+
 export default function WeatherApp() {
   return (
     <div className="WeatherApp">
@@ -54,7 +55,7 @@ export default function WeatherApp() {
         </a>
         and{" "}
         <a
-          href="#https://app.netlify.com/sites/sensational-banoffee-18e086/overview"
+          href="https://app.netlify.com/teams/evasuper0115/overview"
           target="_blank"
           rel="noreferrer"
         >
