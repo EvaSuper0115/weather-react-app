@@ -1,6 +1,7 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import DegreeNow from "./DegreeNow";
+import DegreeDetails from "./DegreeDetails";
 export default function ClickedCurrentLocation(props) {
   return (
     <div className="ClickCurrentLocation">
@@ -23,11 +24,11 @@ export default function ClickedCurrentLocation(props) {
             </div>
           </div>
           <div className="col-sm-6 degreeDetailsColum">
-            <div className="degreeDetails">
-              <p>Lowest : {Math.round(props.userWeather.lowest)}° </p>
-              <p>Highest: {Math.round(props.userWeather.highest)}°</p>
-              <p>Feels like: {Math.round(props.userWeather.feelsLike)}°</p>
-            </div>
+            <DegreeDetails
+              low={props.userWeather.lowest}
+              high={props.userWeather.highest}
+              feelsLike={props.userWeather.feelsLike}
+            />
           </div>
         </div>
       </div>
