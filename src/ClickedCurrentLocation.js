@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
+import DegreeNow from "./DegreeNow";
 export default function ClickedCurrentLocation(props) {
   return (
     <div className="ClickCurrentLocation">
@@ -9,15 +10,8 @@ export default function ClickedCurrentLocation(props) {
       <div className="degreeNowIcon">
         <WeatherIcon code={props.userWeather.icon} />
       </div>
-      <div className="DegreeNow">
-        <div className="degreeNow">
-          {Math.round(props.userWeather.temperature)}
-        </div>
-        <div className="degreeSign">
-          <span className="celsius active">°C </span>|
-          <span className="fahrenheit">°F </span>
-        </div>
-      </div>
+
+      <DegreeNow celsius={props.userWeather.temperature} />
 
       <div className="WeatherDetails">
         <div className="row weatherDetailsWholeRow">
