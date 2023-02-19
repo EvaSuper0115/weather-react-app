@@ -1,17 +1,13 @@
 import React from "react";
-
+import WeatherIcon from "./WeatherIcon";
 export default function ClickedCurrentLocation(props) {
   return (
     <div className="ClickCurrentLocation">
       <div className="CityName">
         <h1 className="cityName">{props.userWeather.name}</h1>
       </div>
-      <div className="DegreeIcon">
-        <img
-          className="degreeNowIcon"
-          src={props.userWeather.icon}
-          alt={props.userWeather.icon}
-        />
+      <div className="degreeNowIcon">
+        <WeatherIcon code={props.userWeather.icon} />
       </div>
       <div className="DegreeNow">
         <div className="degreeNow">

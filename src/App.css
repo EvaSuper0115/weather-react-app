@@ -156,8 +156,9 @@ body {
   font-size: 45px;
 }
 .degreeNowIcon {
-  display: block;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin: 7px auto;
 }
 .weatherDetailsWholeRow {
   display: flex;
@@ -172,7 +173,7 @@ body {
 .weatherDetails,
 .degreeDetails {
   font-size: 22px;
-  line-height: 27px;
+  line-height: 24px;
   text-align: center;
   text-transform: capitalize;
 }

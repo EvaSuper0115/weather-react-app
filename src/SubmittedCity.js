@@ -1,17 +1,13 @@
 import React from "react";
-
+import WeatherIcon from "./WeatherIcon";
 export default function SubmittedCity(props) {
   return (
     <div className="SubmittedCity">
       <div className="CityName">
         <h1 className="cityName">{props.city}</h1>
       </div>
-      <div className="DegreeIcon">
-        <img
-          className="degreeNowIcon"
-          src={props.weather.icon}
-          alt={props.weather.icon}
-        />
+      <div className="degreeNowIcon">
+        <WeatherIcon code={props.weather.icon} />
       </div>
       <div className="DegreeNow">
         <div className="degreeNow">{Math.round(props.weather.temperature)}</div>
