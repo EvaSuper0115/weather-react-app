@@ -2,6 +2,7 @@ import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import DegreeNow from "./DegreeNow";
 import DegreeDetails from "./DegreeDetails";
+import WeatherDetails from "./WeatherDetails";
 export default function SubmittedCity(props) {
   return (
     <div className="SubmittedCity">
@@ -16,11 +17,7 @@ export default function SubmittedCity(props) {
       <div className="WeatherDetails">
         <div className="row weatherDetailsWholeRow">
           <div className="col-sm-6 weatherDetailsColum">
-            <div className="weatherDetails">
-              <p>{props.weather.description}</p>
-              <p>Humidity : {props.weather.humidity} %</p>
-              <p>Wind : {Math.round(props.weather.wind)} mps</p>
-            </div>
+            <WeatherDetails weatherDetails={props.weather} />
           </div>
           <div className="col-sm-6 degreeDetailsColum">
             <DegreeDetails
