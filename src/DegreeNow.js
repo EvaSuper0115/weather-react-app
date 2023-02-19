@@ -5,13 +5,11 @@ export default function DegreeNow(props) {
 
   function convertToFahreheit(event) {
     event.preventDefault();
-
     setTemp((props.celsius * 9) / 5 + 32);
   }
 
   function convertToCelsius(event) {
     event.preventDefault();
-
     setTemp(props.celsius);
   }
 
