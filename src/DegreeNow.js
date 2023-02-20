@@ -17,7 +17,7 @@ export default function DegreeNow(props) {
     <div className="DegreeNow">
       <div className="degreeNow">{Math.round(temp)} </div>
       <div className="degreeSign">
-        <span onClick={convertToCelsius} className="celsius active">
+        <span onClick={convertToCelsius} className="celsius">
           °C{" "}
         </span>
         |

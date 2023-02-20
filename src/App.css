@@ -127,9 +127,11 @@ body {
 }
 .degreeSign {
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
   margin-top: -50px;
   margin-bottom: -3px;
+
+  font-weight: 700;
 }
 
 .celsius,
@@ -146,15 +148,6 @@ body {
   box-shadow: 0px 30px 50px rgb(57 48 90 / 10%);
 }
 
-.active {
-  font-size: 40px;
-  font-weight: 700;
-}
-
-.DegreeUnitDisplay #celsius,
-.DegreeUnitDisplay #fahrenh {
-  font-size: 45px;
-}
 .degreeNowIcon {
   display: flex;
   justify-content: center;
