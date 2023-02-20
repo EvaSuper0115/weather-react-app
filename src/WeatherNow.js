@@ -1,16 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function WeatherNow(props) {
   const [temp, setTemp] = useState(props.weather.temperature);
+  const [lowTemp, setLowTemp] = useState(props.weather.lowest);
+  const [highTemp, setHighTemp] = useState(props.weather.highest);
+  const [feelsLike, setFeelsLike] = useState(props.weather.feelsLike);
+
+  useEffect(() => {
+    setTemp(props.weather.temperature);
+  }, [props.weather.temperature]);
+
+  useEffect(() => {
+    setLowTemp(props.weather.lowest);
+  }, [props.weather.lowest]);
+
+  useEffect(() => {
+    setHighTemp(props.weather.highest);
+  }, [props.weather.highest]);
+
+  useEffect(() => {
+    setFeelsLike(props.weather.feelsLike);
+  }, [props.weather.feelsLike]);
 
   function convertToFahreheit(event) {
     event.preventDefault();
     setTemp((props.weather.temperature * 9) / 5 + 32);
+    setLowTemp((props.weather.lowest * 9) / 5 + 32);
+    setHighTemp((props.weather.highest * 9) / 5 + 32);
+    setFeelsLike((props.weather.feelsLike * 9) / 5 + 32);
   }
 
   function convertToCelsius(event) {
     event.preventDefault();
     setTemp(props.weather.temperature);
+    setLowTemp(props.weather.lowest);
+    setHighTemp(props.weather.highest);
+    setFeelsLike(props.weather.feelsLike);
   }
 
   return (
@@ -38,9 +63,9 @@ export default function WeatherNow(props) {
           </div>
           <div className="col-sm-6 degreeDetailsColum">
             <div className="degreeDetails">
-              <p>Lowest : {Math.round(props.weather.lowest)}° </p>
-              <p>Highest: {Math.round(props.weather.highest)}°</p>
-              <p>Feels like: {Math.round(props.weather.feelsLike)}°</p>
+              <p>Lowest : {Math.round(lowTemp)}° </p>
+              <p>Highest: {Math.round(highTemp)}°</p>
+              <p>Feels like: {Math.round(feelsLike)}°</p>
             </div>
           </div>
         </div>
