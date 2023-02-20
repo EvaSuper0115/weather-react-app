@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 
 export default function WeatherNow(props) {
-  let celsius = props.weather.temperature;
-  const [temp, setTemp] = useState(celsius);
-  console.log(temp);
+  const [temp, setTemp] = useState(props.weather.temperature);
 
   function convertToFahreheit(event) {
     event.preventDefault();
-    setTemp((celsius * 9) / 5 + 32);
+    setTemp((props.weather.temperature * 9) / 5 + 32);
   }
 
   function convertToCelsius(event) {
     event.preventDefault();
-    setTemp(celsius);
+    setTemp(props.weather.temperature);
   }
 
   return (
