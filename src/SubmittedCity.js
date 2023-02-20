@@ -1,8 +1,7 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
-import DegreeNow from "./DegreeNow";
-import DegreeDetails from "./DegreeDetails";
-import WeatherDetails from "./WeatherDetails";
+import WeatherNow from "./WeatherNow";
+
 export default function SubmittedCity(props) {
   return (
     <div className="SubmittedCity">
@@ -12,22 +11,8 @@ export default function SubmittedCity(props) {
       <div className="degreeNowIcon">
         <WeatherIcon code={props.weather.icon} />
       </div>
-      <DegreeNow celsius={props.weather.temperature} />
+      <WeatherNow weather={props.weather} />
 
-      <div className="WeatherDetails">
-        <div className="row weatherDetailsWholeRow">
-          <div className="col-sm-6 weatherDetailsColum">
-            <WeatherDetails weatherDetails={props.weather} />
-          </div>
-          <div className="col-sm-6 degreeDetailsColum">
-            <DegreeDetails
-              low={props.weather.lowest}
-              high={props.weather.highest}
-              feelsLike={props.weather.feelsLike}
-            />
-          </div>
-        </div>
-      </div>
       <div className="LastUpdated">
         <div className="last-updated-title">last updated</div>
         <div className="date">{props.weather.date.toDateString()}</div>
