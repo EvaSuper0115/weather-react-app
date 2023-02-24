@@ -59,6 +59,7 @@ export default function WeatherToday() {
       highest: response.data.main.temp_max,
       feelsLike: response.data.main.feels_like,
       date: new Date(response.data.dt * 1000),
+      coords: response.data.coord,
     });
   }
 
@@ -128,7 +129,7 @@ export default function WeatherToday() {
           {form}
           <ClickedCurrentLocation userWeather={userWeather} />
         </div>
-        <HourlyForecast />
+        <HourlyForecast coords={userWeather.coords} />
       </div>
     );
   } else {

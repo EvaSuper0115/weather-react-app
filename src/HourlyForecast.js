@@ -5,16 +5,10 @@ export default function HourlyForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecastData, setForecastData] = useState(null);
   function handleForecastResponse(response) {
+    setLoaded(true);
     setForecastData(response.data.hourly);
   }
   if (loaded) {
-    let lat = props.coords.lat;
-    let lon = props.coords.lon;
-    let ForecastApiKey = "2bd326a60dc89a53287e446e819664df";
-    let ForecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${ForecastApiKey}&units=metric`;
-    axios.get(ForecastApiUrl).then(handleForecastResponse);
-    return null;
-  } else {
     return (
       <div>
         <div className="HourlyForecast pagePaddingWeatherNextFiveDays">
@@ -31,5 +25,12 @@ export default function HourlyForecast(props) {
         </div>
       </div>
     );
+  } else {
+    let lat = props.coords.lat;
+    let lon = props.coords.lon;
+    let ForecastApiKey = "2bd326a60dc89a53287e446e819664df";
+    let ForecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${ForecastApiKey}&units=metric`;
+    axios.get(ForecastApiUrl).then(handleForecastResponse);
+    return null;
   }
 }
