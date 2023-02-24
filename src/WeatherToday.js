@@ -26,6 +26,7 @@ export default function WeatherToday() {
       highest: response.data.main.temp_max,
       feelsLike: response.data.main.feels_like,
       date: new Date(response.data.dt * 1000),
+      coords: response.data.coord,
     });
   }
 
@@ -117,7 +118,7 @@ export default function WeatherToday() {
           {form}
           <SubmittedCity city={displayName} weather={weather} />
         </div>
-        <HourlyForecast />
+        <HourlyForecast coords={weather.coords} />
       </div>
     );
   } else if (clicked) {
