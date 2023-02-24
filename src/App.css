@@ -117,6 +117,7 @@ body {
   margin: 0;
   padding: 0;
   text-transform: capitalize;
+  text-align: center;
 }
 
 .degreeNow {
@@ -190,9 +191,6 @@ body {
   margin: 0 auto;
 }
 .hours {
-  text-align: center;
-  display: block;
-  margin: 0 auto;
   margin-top: 2.5px;
   font-family: "Cutive Mono", monospace;
   font-size: 12px;

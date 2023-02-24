@@ -1,5 +1,5 @@
 import React from "react";
-
+import WeatherIcon from "./WeatherIcon";
 export default function HourlyForecast() {
   return (
     <div>
@@ -11,27 +11,7 @@ export default function HourlyForecast() {
         <div className="hourlyForecastRow">
           <div className="hourCol col-lg-2">
             <div className="hours">13:00</div>
-            <img
-              className="hourlyForecastIcons"
-              src="https://openweathermap.org/img/wn/04n@2x.png"
-              alt="icon-id"
-            />
-          </div>
-          <div className="hourCol col-lg-2">
-            <div className="hours">13:00</div>
-            <img
-              className="hourlyForecastIcons"
-              src="https://openweathermap.org/img/wn/04n@2x.png"
-              alt="icon-id"
-            />
-          </div>
-          <div className="hourCol col-lg-2">
-            <div className="hours">13:00</div>
-            <img
-              className="hourlyForecastIcons"
-              src="https://openweathermap.org/img/wn/04n@2x.png"
-              alt="icon-id"
-            />
+            <WeatherIcon code="01d" size={35} />
           </div>
         </div>
       </div>

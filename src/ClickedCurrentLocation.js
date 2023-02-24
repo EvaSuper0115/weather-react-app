@@ -9,7 +9,7 @@ export default function ClickedCurrentLocation(props) {
         <h1 className="cityName">{props.userWeather.name}</h1>
       </div>
       <div className="degreeNowIcon">
-        <WeatherIcon code={props.userWeather.icon} />
+        <WeatherIcon code={props.userWeather.icon} size={60} />
       </div>
 
       <UserWeatherNow userWeather={props.userWeather} />

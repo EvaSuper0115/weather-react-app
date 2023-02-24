@@ -9,7 +9,7 @@ export default function SubmittedCity(props) {
         <h1 className="cityName">{props.city}</h1>
       </div>
       <div className="degreeNowIcon">
-        <WeatherIcon code={props.weather.icon} />
+        <WeatherIcon code={props.weather.icon} size={60} />
       </div>
       <WeatherNow weather={props.weather} />
 
