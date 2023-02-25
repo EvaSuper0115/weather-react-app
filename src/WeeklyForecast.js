@@ -5,7 +5,7 @@ export default function WeeklyForecast(props) {
   return (
     <div className="WeeklyForecast">
       <p className="forecastPageTitle">
-        <i className="fa-solid fa-arrow-trend-up"></i>WEEKLY FORECAST
+        <i className="fa-solid fa-calendar-week"></i>1 WEEK FORECAST
       </p>
 
       <div>
