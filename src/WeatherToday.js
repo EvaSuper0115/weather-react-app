@@ -116,14 +116,14 @@ export default function WeatherToday() {
   if (submitted) {
     return (
       <div className="row">
-        <div className="col-lg-6">
-          <div className="WeatherToday pagePaddingWeatherToday shadow">
+        <div className="col-lg-6 ">
+          <div className="WeatherToday pagePaddingWeatherToday ">
             {form}
             <SubmittedCity city={displayName} weather={weather} />
           </div>
           <HourlyForecast coords={weather.coords} />
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-6 ">
           <div className="pagePaddingWeatherNextFiveDays">
             <WeeklyForecast coords={weather.coords} />
           </div>
@@ -133,8 +133,8 @@ export default function WeatherToday() {
   } else if (clicked) {
     return (
       <div className="row">
-        <div className="col-lg-6">
-          <div className="WeatherToday pagePaddingWeatherToday shadow">
+        <div className="col-lg-6 ">
+          <div className="WeatherToday pagePaddingWeatherToday ">
             {form}
             <ClickedCurrentLocation userWeather={userWeather} />
           </div>
