@@ -1,7 +1,7 @@
 import React from "react";
 
 import DailyForecast from "./DailyForecast.js";
-export default function WeeklyForecast() {
+export default function WeeklyForecast(props) {
   return (
     <div className="WeeklyForecast">
       <p className="forecastPageTitle">
@@ -9,11 +9,7 @@ export default function WeeklyForecast() {
       </p>
 
       <div>
-        <DailyForecast />
-        <DailyForecast />
-        <DailyForecast />
-        <DailyForecast />
-        <DailyForecast />
+        <DailyForecast coords={props.coords} />
       </div>
     </div>
   );

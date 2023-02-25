@@ -4,6 +4,7 @@ import SubmittedCity from "./SubmittedCity";
 import ClickedCurrentLocation from "./ClickedCurrentLocation";
 import axios from "axios";
 import HourlyForecast from "./HourlyForecast.js";
+import WeeklyForecast from "./WeeklyForecast.js";
 export default function WeatherToday() {
   const [city, setCity] = useState("");
   const [displayName, setDisplayName] = useState("");
@@ -114,22 +115,36 @@ export default function WeatherToday() {
   );
   if (submitted) {
     return (
-      <div className="col-lg-6">
-        <div className="WeatherToday pagePaddingWeatherToday shadow">
-          {form}
-          <SubmittedCity city={displayName} weather={weather} />
+      <div>
+        <div className="col-lg-6">
+          <div className="WeatherToday pagePaddingWeatherToday shadow">
+            {form}
+            <SubmittedCity city={displayName} weather={weather} />
+          </div>
+          <HourlyForecast coords={weather.coords} />
         </div>
-        <HourlyForecast coords={weather.coords} />
+        <div className="col-lg-6">
+          <div className="pagePaddingWeatherNextFiveDays">
+            <WeeklyForecast coords={weather.coords} />
+          </div>
+        </div>
       </div>
     );
   } else if (clicked) {
     return (
-      <div className="col-lg-6">
-        <div className="WeatherToday pagePaddingWeatherToday shadow">
-          {form}
-          <ClickedCurrentLocation userWeather={userWeather} />
+      <div>
+        <div className="col-lg-6">
+          <div className="WeatherToday pagePaddingWeatherToday shadow">
+            {form}
+            <ClickedCurrentLocation userWeather={userWeather} />
+          </div>
+          <HourlyForecast coords={userWeather.coords} />
         </div>
-        <HourlyForecast coords={userWeather.coords} />
+        <div className="col-lg-6">
+          <div className="pagePaddingWeatherNextFiveDays">
+            <WeeklyForecast coords={userWeather.coords} />
+          </div>
+        </div>
       </div>
     );
   } else {

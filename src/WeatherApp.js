@@ -2,8 +2,6 @@ import React from "react";
 import logo from "./logo.svg";
 import WeatherToday from "./WeatherToday.js";
 
-import WeeklyForecast from "./WeeklyForecast.js";
-
 export default function WeatherApp() {
   return (
     <div className="WeatherApp">
@@ -27,11 +25,6 @@ export default function WeatherApp() {
       <div className="row">
         {" "}
         <WeatherToday />
-        <div className="col-lg-6">
-          <div className="pagePaddingWeatherNextFiveDays">
-            <WeeklyForecast />
-          </div>
-        </div>
       </div>
       <p id="footer">
         Designed and Coded with React by{" "}

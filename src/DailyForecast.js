@@ -1,34 +1,50 @@
-import React from "react";
-
-export default function DailyForecast() {
-  return (
-    <div className="DailyForecast">
-      <div className="row forecastWholeRow">
-        <div className="DailyForecastDate col-5 forecastDatesRow">
-          <div className="nextDays">
-            <h5 className="forecastDate">23 FEB 2023</h5>
-            <h5>Fri</h5>
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import WeatherIcon from "./WeatherIcon";
+import GetForecastDate from "./GetForecastDate";
+export default function DailyForecast(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [forecastData, setForecastData] = useState("");
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coords]);
+  function handleForecastResponse(response) {
+    setLoaded(true);
+    setForecastData(response.data.daily);
+    console.log(response.data.daily);
+  }
+  if (loaded) {
+    return (
+      <div className="DailyForecast">
+        {forecastData.slice(0, 7).map((forecast, index) => (
+          <div key={index} className="row forecastWholeRow">
+            <div className="DailyForecastDate col-5 forecastDatesRow">
+              <GetForecastDate date={forecast.dt} />
+            </div>
+            <div className="DailyForecastIcon col-2 forecastIconRow">
+              {" "}
+              <WeatherIcon code={forecast.weather[0].icon} size={40} />
+            </div>
+            <div className="DailyForecastDegree col-5 forecastDegreeRow">
+              <h5 className="forecastMinCelsius card-text">
+                <i className="downArrow fa-solid fa-down-long"></i>
+                {Math.round(forecast.temp.min)}°
+              </h5>
+              <h5 className="forecastMaxCelsius card-text">
+                <i className="upArrow fa-solid fa-up-long"></i>
+                {Math.round(forecast.temp.max)}°
+              </h5>
+            </div>
           </div>
-        </div>
-        <div className="DailyForecastIcon col-2 forecastIconRow">
-          {" "}
-          <img
-            className="forecastIcon card-text"
-            src="https://openweathermap.org/img/wn/04n@2x.png"
-            alt=""
-          />
-        </div>
-        <div className="DailyForecastDegree col-5 forecastDegreeRow">
-          <h5 className="forecastMinCelsius card-text">
-            <i className="downArrow fa-solid fa-down-long"></i>
-            2°
-          </h5>
-          <h5 className="forecastMaxCelsius card-text">
-            <i className="upArrow fa-solid fa-up-long"></i>
-            5°
-          </h5>
-        </div>
+        ))}
       </div>
-    </div>
-  );
+    );
+  } else {
+    let lat = props.coords.lat;
+    let lon = props.coords.lon;
+    let ForecastApiKey = "c5f0e59acac64258bb92ed027d20c68f";
+    let ForecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${ForecastApiKey}&units=metric`;
+    axios.get(ForecastApiUrl).then(handleForecastResponse);
+    return null;
+  }
 }
