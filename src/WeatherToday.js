@@ -115,7 +115,7 @@ export default function WeatherToday() {
   );
   if (submitted) {
     return (
-      <div>
+      <div className="row">
         <div className="col-lg-6">
           <div className="WeatherToday pagePaddingWeatherToday shadow">
             {form}
@@ -132,7 +132,7 @@ export default function WeatherToday() {
     );
   } else if (clicked) {
     return (
-      <div>
+      <div className="row">
         <div className="col-lg-6">
           <div className="WeatherToday pagePaddingWeatherToday shadow">
             {form}

@@ -5,10 +5,8 @@ import WeatherToday from "./WeatherToday.js";
 export default function WeatherApp() {
   return (
     <div className="WeatherApp">
-      <div className="row">
-        {" "}
-        <WeatherToday />
-      </div>
+      {" "}
+      <WeatherToday />
       <p id="footer">
         Designed and Coded with React{" "}
         <span>
