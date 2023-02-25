@@ -22,10 +22,12 @@ export default function HourlyForecast(props) {
           </div>
 
           <div className="hourlyForecastRow">
-            <div className="hourCol col-lg-2">
-              <GetHour hour={forecastData[1].dt} />
-              <WeatherIcon code={forecastData[1].weather[0].icon} size={35} />
-            </div>
+            {forecastData.slice(1, 7).map((forecast, index) => (
+              <div key={index} className="hourCol col-lg-2">
+                <GetHour hour={forecast.dt} />
+                <WeatherIcon code={forecast.weather[0].icon} size={35} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

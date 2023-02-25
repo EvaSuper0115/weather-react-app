@@ -182,7 +182,7 @@ body {
 }
 .hourlyForecastRow {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .hourlyForecastIcons {
@@ -195,7 +195,9 @@ body {
   font-family: "Cutive Mono", monospace;
   font-size: 12px;
 }
-
+.hourCol {
+  text-align: center;
+}
 .hr {
   margin-top: 2px;
   margin-bottom: 0;
