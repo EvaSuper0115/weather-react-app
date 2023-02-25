@@ -6,28 +6,15 @@ export default function WeatherApp() {
   return (
     <div className="WeatherApp">
       <div className="row">
-        <div className="col">
-          <button id="switch-mode-button">
-            <i className="fa-solid fa-toggle-on"></i>{" "}
-          </button>
-        </div>
-        <div className="col logoCol">
-          <a
-            href="https://reactjs.org/"
-            target="_blank"
-            title="React"
-            rel="noreferrer"
-          >
-            <img src={logo} className="App-logo" alt="logo" />
-          </a>
-        </div>
-      </div>
-      <div className="row">
         {" "}
         <WeatherToday />
       </div>
       <p id="footer">
-        Designed and Coded with React by{" "}
+        Designed and Coded with React{" "}
+        <span>
+          <img src={logo} className="App-logo" alt="logo" />
+        </span>
+        by{" "}
         <a
           href="https://golden-madeleine-3016d7.netlify.app"
           target="_blank"
