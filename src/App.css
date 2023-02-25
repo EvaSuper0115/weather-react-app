@@ -195,16 +195,7 @@ body {
   font-family: "Cutive Mono", monospace;
   font-size: 12px;
 }
-.hourCol {
-  border-radius: 10px;
-  width: 50px;
 
-  transition: all 200ms ease-in-out;
-}
-.hourCol:hover {
-  background: rgba(94, 94, 126, 0.2);
-  font-weight: 600;
-}
 .hr {
   margin-top: 2px;
   margin-bottom: 0;
