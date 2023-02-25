@@ -1,14 +1,17 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GetHour from "./GetHour";
 import WeatherIcon from "./WeatherIcon";
 export default function HourlyForecast(props) {
   const [loaded, setLoaded] = useState(false);
   const [forecastData, setForecastData] = useState("");
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.coords]);
   function handleForecastResponse(response) {
     setLoaded(true);
     setForecastData(response.data.hourly);
-    console.log(response.data);
   }
   if (loaded) {
     return (
