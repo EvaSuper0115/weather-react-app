@@ -11,7 +11,6 @@ export default function DailyForecast(props) {
   function handleForecastResponse(response) {
     setLoaded(true);
     setForecastData(response.data.daily);
-    console.log(response.data.daily);
   }
   if (loaded) {
     return (

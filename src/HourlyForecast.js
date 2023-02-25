@@ -26,6 +26,7 @@ export default function HourlyForecast(props) {
               <div key={index} className="hourCol col-lg-2">
                 <GetHour hour={forecast.dt} />
                 <WeatherIcon code={forecast.weather[0].icon} size={35} />
+                <div className="hourlyDegree">{Math.round(forecast.temp)}°</div>
               </div>
             ))}
           </div>

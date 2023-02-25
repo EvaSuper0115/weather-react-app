@@ -203,6 +203,10 @@ body {
   margin-bottom: 0;
   width: 400px;
 }
+.hourlyDegree {
+  font-weight: 600;
+  font-size: 23px;
+}
 .date,
 .last-updated-time,
 .last-updated-title {
