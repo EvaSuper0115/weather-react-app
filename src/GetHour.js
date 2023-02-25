@@ -5,8 +5,8 @@ export default function GetHour(props) {
   let formattedHours = hours.getHours();
 
   if (formattedHours < 10) {
-    return <div className="GetHour">0{formattedHours}:00 </div>;
+    return <div className="GetHour">0{formattedHours} </div>;
   } else {
-    return <div className="GetHour">{formattedHours}:00 </div>;
+    return <div className="GetHour">{formattedHours}</div>;
   }
 }

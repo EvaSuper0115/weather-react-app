@@ -256,8 +256,8 @@ body {
 }
 
 .forecastIconRow {
-  display: flex;
-  justify-content: center;
+  position: relative;
+  top: 18px;
 }
 .forecastDegreeRow {
   display: flex;
@@ -355,4 +355,9 @@ body {
 }
 a {
   text-decoration: none;
+}
+@media (max-width: 357px) {
+  .forecastDegreeRow {
+    margin: -15px 1px 0 5px;
+  }
 }
