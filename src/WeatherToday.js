@@ -147,9 +147,7 @@ export default function WeatherToday() {
         </div>
       </div>
     );
-  } else if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showCurrentLocation);
   } else {
-    return <h1>Please allow location access to use this feature.</h1>;
+    navigator.geolocation.getCurrentPosition(showCurrentLocation);
   }
 }

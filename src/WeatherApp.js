@@ -1,13 +1,25 @@
 import React from "react";
 import logo from "./logo.svg";
 import WeatherToday from "./WeatherToday.js";
-
+import { Radio } from "react-loader-spinner";
 export default function WeatherApp() {
   return (
     <div className="WeatherApp">
       {" "}
       <WeatherToday />
       <p id="footer">
+        <div>
+          <Radio
+            visible={true}
+            colors={["#f4ffe9", "#f4ffe9", "#f4ffe9"]}
+            height="55"
+            width="55"
+            ariaLabel="radio-loading"
+            wrapperStyle={{}}
+            wrapperClass="radio-wrapper"
+          />
+          Allow location access to use.
+        </div>{" "}
         Designed and Coded with React{" "}
         <span>
           <img src={logo} className="App-logo" alt="logo" />
