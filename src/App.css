@@ -251,7 +251,7 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  gap: 10px;
+  gap: 7px;
 }
 .forecastDescription {
   position: relative;
