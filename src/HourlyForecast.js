@@ -14,16 +14,17 @@ export default function HourlyForecast(props) {
     setForecastData(response.data.hourly);
   }
   if (loaded) {
+    console.log(forecastData.slice(1, 25));
     return (
       <div>
         <div className="HourlyForecast pagePaddingWeatherNextFiveDays">
           <div className="hourlyTitle">
-            <i className="fa-solid fa-clock"></i>HOURLY FORECAST
+            <i className="fa-solid fa-clock"></i>24-HOURS FORECAST
           </div>
 
           <div className="hourlyForecastRow">
-            {forecastData.slice(1, 7).map((forecast, index) => (
-              <div key={index} className="hourCol col-lg-2">
+            {forecastData.slice(1, 26).map((forecast, index) => (
+              <div key={index} className="hourCol col-1">
                 <GetHour hour={forecast.dt} />
                 <WeatherIcon code={forecast.weather[0].icon} size={27} />
                 <div className="hourlyDegree">{Math.round(forecast.temp)}°</div>

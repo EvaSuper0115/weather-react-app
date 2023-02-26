@@ -160,16 +160,20 @@ body {
   text-align: center;
   font-size: 20px;
   padding-bottom: 24px;
-  color: #f4ffe9;
 }
 .fa-clock,
 .fa-calendar-week {
   position: relative;
   left: -10px;
 }
+
 .hourlyForecastRow {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  gap: 25px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .hourlyForecastIcons {
@@ -278,7 +282,6 @@ body {
   color: #dddddf;
 }
 
-.forecastPageTitle,
 .forecastDate,
 .forecastDegree,
 .forecastIcon,
