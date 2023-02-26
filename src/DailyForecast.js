@@ -15,31 +15,36 @@ export default function DailyForecast(props) {
   }
   if (loaded) {
     return (
-      <div className="DailyForecast">
-        {forecastData.slice(0, 7).map((forecast, index) => (
-          <div key={index} className="row forecastWholeRow">
-            <div className="DailyForecastDate col-3 forecastDatesRow">
-              <GetForecastDate date={forecast.dt} />
-            </div>
-            <div className="DailyForecastIcon col-2 forecastIconRow">
-              {" "}
-              <WeatherIcon code={forecast.weather[0].icon} size={40} />
-            </div>
-            <h5 className="card-text forecastDescription col-4">
-              {forecast.weather[0].description}
-            </h5>
-            <div className="DailyForecastDegree col-3 forecastDegreeRow">
-              <h5 className="forecastMinCelsius card-text">
-                <i className="downArrow fa-solid fa-down-long"></i>
-                {Math.round(forecast.temp.min)}°
+      <div>
+        <p className="forecastPageTitle">
+          <i className="fa-solid fa-calendar-week"></i>1 WEEK FORECAST
+        </p>
+        <div className="DailyForecast">
+          {forecastData.slice(0, 7).map((forecast, index) => (
+            <div key={index} className="row forecastWholeRow">
+              <div className="DailyForecastDate col-3 forecastDatesRow">
+                <GetForecastDate date={forecast.dt} />
+              </div>
+              <div className="DailyForecastIcon col-2 forecastIconRow">
+                {" "}
+                <WeatherIcon code={forecast.weather[0].icon} size={40} />
+              </div>
+              <h5 className="card-text forecastDescription col-4">
+                {forecast.weather[0].description}
               </h5>
-              <h5 className="forecastMaxCelsius card-text">
-                <i className="upArrow fa-solid fa-up-long"></i>
-                {Math.round(forecast.temp.max)}°
-              </h5>
+              <div className="DailyForecastDegree col-3 forecastDegreeRow">
+                <h5 className="forecastMinCelsius card-text">
+                  <i className="downArrow fa-solid fa-down-long"></i>
+                  {Math.round(forecast.temp.min)}°
+                </h5>
+                <h5 className="forecastMaxCelsius card-text">
+                  <i className="upArrow fa-solid fa-up-long"></i>
+                  {Math.round(forecast.temp.max)}°
+                </h5>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     );
   } else {
