@@ -240,7 +240,7 @@ body {
 
 .forecastDatesRow {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .forecastIconRow {
@@ -249,9 +249,16 @@ body {
 }
 .forecastDegreeRow {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
 }
-
+.forecastDescription {
+  position: relative;
+  bottom: -23px;
+  font-size: 17px;
+  font-weight: 300;
+}
 .forecastMinCelsius {
   font-size: 25px;
   display: inline;
@@ -296,5 +303,11 @@ a {
 @media (max-width: 357px) {
   .forecastDegreeRow {
     margin: -15px 1px 0 5px;
+  }
+  .forecastDescription {
+    margin-left: 18px;
+  }
+  .forecastIconRow {
+    margin-left: 18px;
   }
 }

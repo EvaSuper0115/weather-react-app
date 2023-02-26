@@ -11,20 +11,24 @@ export default function DailyForecast(props) {
   function handleForecastResponse(response) {
     setLoaded(true);
     setForecastData(response.data.daily);
+    console.log(response.data.daily);
   }
   if (loaded) {
     return (
       <div className="DailyForecast">
         {forecastData.slice(0, 7).map((forecast, index) => (
           <div key={index} className="row forecastWholeRow">
-            <div className="DailyForecastDate col-5 forecastDatesRow">
+            <div className="DailyForecastDate col-3 forecastDatesRow">
               <GetForecastDate date={forecast.dt} />
             </div>
             <div className="DailyForecastIcon col-2 forecastIconRow">
               {" "}
               <WeatherIcon code={forecast.weather[0].icon} size={40} />
             </div>
-            <div className="DailyForecastDegree col-5 forecastDegreeRow">
+            <h5 className="card-text forecastDescription col-4">
+              {forecast.weather[0].description}
+            </h5>
+            <div className="DailyForecastDegree col-3 forecastDegreeRow">
               <h5 className="forecastMinCelsius card-text">
                 <i className="downArrow fa-solid fa-down-long"></i>
                 {Math.round(forecast.temp.min)}°

@@ -14,7 +14,6 @@ export default function HourlyForecast(props) {
     setForecastData(response.data.hourly);
   }
   if (loaded) {
-    console.log(forecastData.slice(1, 25));
     return (
       <div>
         <div className="HourlyForecast pagePaddingWeatherNextFiveDays">
