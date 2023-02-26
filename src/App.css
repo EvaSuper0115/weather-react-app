@@ -256,6 +256,7 @@ body {
 .forecastDescription {
   position: relative;
   bottom: -23px;
+  right: -11px;
   font-size: 17px;
   font-weight: 300;
 }
@@ -309,5 +310,11 @@ a {
   }
   .forecastIconRow {
     margin-left: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .forecastMaxCelsius,
+  .forecastMinCelsius {
+    font-size: 22px;
   }
 }
