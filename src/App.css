@@ -260,15 +260,16 @@ body {
   font-size: 17px;
   font-weight: 300;
 }
+
 .forecastMinCelsius {
-  font-size: 25px;
+  font-size: 22px;
   display: inline;
   opacity: 0.7;
   position: relative;
   bottom: -17px;
 }
 .forecastMaxCelsius {
-  font-size: 25px;
+  font-size: 22px;
   display: inline;
   margin-left: 10px;
   position: relative;
@@ -310,11 +311,5 @@ a {
   }
   .forecastIconRow {
     margin-left: 18px;
-  }
-}
-@media (max-width: 576px) {
-  .forecastMaxCelsius,
-  .forecastMinCelsius {
-    font-size: 22px;
   }
 }
