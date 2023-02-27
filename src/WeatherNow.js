@@ -8,19 +8,15 @@ export default function WeatherNow(props) {
 
   useEffect(() => {
     setTemp(props.weather.temperature);
-  }, [props.weather.temperature]);
-
-  useEffect(() => {
     setLowTemp(props.weather.lowest);
-  }, [props.weather.lowest]);
-
-  useEffect(() => {
     setHighTemp(props.weather.highest);
-  }, [props.weather.highest]);
-
-  useEffect(() => {
     setFeelsLike(props.weather.feelsLike);
-  }, [props.weather.feelsLike]);
+  }, [
+    props.weather.temperature,
+    props.weather.lowest,
+    props.weather.highest,
+    props.weather.feelsLike,
+  ]);
 
   function convertToFahreheit(event) {
     event.preventDefault();

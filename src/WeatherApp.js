@@ -7,7 +7,7 @@ export default function WeatherApp() {
     <div className="WeatherApp">
       {" "}
       <WeatherToday />
-      <p id="footer">
+      <div id="footer">
         <div>
           <Radio
             visible={true}
@@ -48,7 +48,7 @@ export default function WeatherApp() {
         >
           hosted on Netlify
         </a>
-      </p>
+      </div>
     </div>
   );
 }
