@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import WeatherToday from "./WeatherToday.js";
 import { Radio } from "react-loader-spinner";
 export default function WeatherApp() {
@@ -20,11 +20,7 @@ export default function WeatherApp() {
           />
           Allow location access to use.
         </div>{" "}
-        Designed and Coded with React{" "}
-        <span>
-          <img src={logo} className="App-logo" alt="logo" />
-        </span>
-        by{" "}
+        Designed and Coded with React by{" "}
         <a
           href="https://golden-madeleine-3016d7.netlify.app"
           target="_blank"
