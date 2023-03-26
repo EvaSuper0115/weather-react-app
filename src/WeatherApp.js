@@ -21,11 +21,7 @@ export default function WeatherApp() {
           Allow location access to use.
         </div>{" "}
         Designed and Coded with React by{" "}
-        <a
-          href="https://golden-madeleine-3016d7.netlify.app"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://ontaito.com/" target="_blank" rel="noreferrer">
           On Tai To
         </a>{" "}
         and is{" "}
